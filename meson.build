@@ -3,7 +3,5 @@ project('CSC195', 'cpp',
   default_options : ['warning_level=3',
                      'cpp_std=c++14'])
 
-exe = executable('CSC195', 'csc195.cpp',
-  install : true)
-
-test('basic', exe)
+subproject('DataTypes')
+subproject('HelloWorld')
