@@ -3,7 +3,7 @@ project('HelloWorld', 'cpp',
   default_options : ['warning_level=3',
                      'cpp_std=c++14'])
 
-exe = executable('HelloWorld', 'HelloWorld.cpp',
+exe = executable('HelloWorld', ['HelloWorld.cpp', 'Student.cpp'],
   install : true)
 
 test('basic', exe)
