@@ -1,5 +1,7 @@
+#include <crossline.h>
 #include <iostream>
 #include <limits>
+#include <sstream>
 
 using namespace std;
 
@@ -7,17 +9,20 @@ const float TAX = 0.1f;
 
 #define PROMPT(prompt, output)                                                 \
   for (;;) {                                                                   \
-    cout << prompt;                                                            \
-    if (cin >> output) {                                                       \
+    std::istringstream strm;                                                   \
+    char buf[256];                                                             \
+    strm.rdbuf()->pubsetbuf(buf, sizeof(buf));                                 \
+    crossline_readline(prompt, buf, sizeof(buf));                              \
+    if (strm >> output) {                                                      \
       break;                                                                   \
     } else {                                                                   \
       cout << "The value entered wasn't valid" << endl;                        \
-      cin.clear();                                                             \
-      cin.ignore(numeric_limits<streamsize>::max(), '\n');                     \
     }                                                                          \
   }
 
 int main() {
+  crossline_prompt_color_set(CROSSLINE_FGCOLOR_GREEN);
+
   string name = "";
   char initial = '\0';
   short age = -1;

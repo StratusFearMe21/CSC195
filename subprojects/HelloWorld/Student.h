@@ -5,7 +5,7 @@ void f();
 
 class Student {
 public:
-  Student() { SetName(NULL); }
+  Student() {}
   Student(std::string name) { SetName(name); }
 
   void Write();
