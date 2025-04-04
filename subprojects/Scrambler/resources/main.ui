@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>851</width>
+    <height>649</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>1</horstretch>
+    <verstretch>1</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <widget class="MainWidget" name="mainWidget" native="true">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="mainTextLayout">
+        <item>
+         <widget class="QLabel" name="mainTextLabel">
+          <property name="text">
+           <string>Main Text</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="mainTextEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="cryptsLayout">
+        <item>
+         <widget class="QCheckBox" name="cutterEnabled">
+          <property name="text">
+           <string>Cutter</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KeyPressTextEdit" name="cutterInOut"/>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="reverserEnabled">
+          <property name="text">
+           <string>Reverser</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KeyPressTextEdit" name="reverserInOut"/>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="vowelReplacerEnabled">
+          <property name="text">
+           <string>Vowel Replacer</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KeyPressTextEdit" name="vowelReplacerInOut"/>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="xorCryptEnabled">
+          <property name="text">
+           <string>XOR Crypt</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="xorCryptKey">
+          <property name="value">
+           <number>1</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KeyPressTextEdit" name="xorCryptInOut"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MainWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>mainTextChanged()</slot>
+    <slot>cutterTextChanged()</slot>
+    <slot>reverserTextChanged()</slot>
+    <slot>vowelReplacerTextChanged()</slot>
+    <slot>xorCryptTextChanged()</slot>
+    <slot>cutterSetEnabled(Qt::CheckState)</slot>
+    <slot>reverserSetEnabled(Qt::CheckState)</slot>
+    <slot>vowelReplacerSetEnabled(Qt::CheckState)</slot>
+    <slot>xorCryptSetEnabled(Qt::CheckState)</slot>
+    <slot>xorCryptKeyChanged(int)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>KeyPressTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>keypresstextedit.h</header>
+   <slots>
+    <signal>keypress()</signal>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>cutterEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cutterInOut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>505</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>523</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reverserEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>reverserInOut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>831</x>
+     <y>195</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vowelReplacerEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>vowelReplacerInOut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>831</x>
+     <y>349</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>505</x>
+     <y>376</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xorCryptEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>xorCryptInOut</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>831</x>
+     <y>504</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>552</x>
+     <y>533</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cutterEnabled</sender>
+   <signal>checkStateChanged(Qt::CheckState)</signal>
+   <receiver>mainWidget</receiver>
+   <slot>cutterSetEnabled(Qt::CheckState)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reverserEnabled</sender>
+   <signal>checkStateChanged(Qt::CheckState)</signal>
+   <receiver>mainWidget</receiver>
+   <slot>reverserSetEnabled(Qt::CheckState)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vowelReplacerEnabled</sender>
+   <signal>checkStateChanged(Qt::CheckState)</signal>
+   <receiver>mainWidget</receiver>
+   <slot>vowelReplacerSetEnabled(Qt::CheckState)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xorCryptEnabled</sender>
+   <signal>checkStateChanged(Qt::CheckState)</signal>
+   <receiver>mainWidget</receiver>
+   <slot>xorCryptSetEnabled(Qt::CheckState)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xorCryptKey</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>mainWidget</receiver>
+   <slot>xorCryptKeyChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>499</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xorCryptEnabled</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>xorCryptKey</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>499</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>vowelReplacerInOut</sender>
+   <signal>keypress()</signal>
+   <receiver>mainWidget</receiver>
+   <slot>vowelReplacerTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xorCryptInOut</sender>
+   <signal>keypress()</signal>
+   <receiver>mainWidget</receiver>
+   <slot>xorCryptTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>574</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>reverserInOut</sender>
+   <signal>keypress()</signal>
+   <receiver>mainWidget</receiver>
+   <slot>reverserTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>249</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cutterInOut</sender>
+   <signal>keypress()</signal>
+   <receiver>mainWidget</receiver>
+   <slot>cutterTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>630</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>mainTextEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>mainWidget</receiver>
+   <slot>mainTextChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>335</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>324</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
