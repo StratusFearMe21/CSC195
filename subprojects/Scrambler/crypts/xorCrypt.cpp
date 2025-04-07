@@ -10,20 +10,19 @@ void MainWidget::xorCryptKeyChanged(int newKey) {
   MainWidget::mainTextChanged();
 }
 
-void XorCrypt::encrypt(QString phraseToEncrypt) {
-  QByteArray phrase = phraseToEncrypt.toUtf8();
+QString xorCrypt(QString cipherText, int key) {
+  QByteArray phrase = cipherText.toUtf8();
   for (int i = 0; i < phrase.length(); i++) {
     // phrase[i] &= 0b00111111;
     phrase[i] ^= key & 0b00111111;
   }
-  inOut->setPlainText(QString(phrase));
+  return QString(phrase);
+}
+
+void XorCrypt::encrypt(QString phraseToEncrypt) {
+  inOut->setPlainText(xorCrypt(phraseToEncrypt, key));
 }
 
 QString XorCrypt::decrypt() {
-  QByteArray phraseToDecrypt = inOut->toPlainText().toUtf8();
-  for (int i = 0; i < phraseToDecrypt.length(); i++) {
-    // phraseToDecrypt[i] &= 0b00111111;
-    phraseToDecrypt[i] ^= key & 0b00111111;
-  }
-  return QString(phraseToDecrypt);
+  return xorCrypt(inOut->toPlainText().toUtf8(), key);
 }
