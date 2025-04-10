@@ -11,7 +11,7 @@ struct Person {
 
 void square(int i) { i = i * i; }
 void square_ref(int &i) { i = i * i; }
-void double_int(int *i) { *i *= 2; }
+void double_int(int *const i) { *i *= 2; }
 
 int main() {
   random_device generator;
@@ -104,7 +104,7 @@ int main() {
   // !! make sure to dereference the pointer to set the value and not set the
   // address !! call the Double function with the pointer created in the POINTER
   // VARIABLE section
-  void double_int(int *i);
+  void double_int(int *const i);
   oldNumber = someNumber;
   double_int(pointer);
 
