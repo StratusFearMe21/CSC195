@@ -1,0 +1,5 @@
+[wrap-file]
+directory = fltk-release-1.4.2
+source_url = https://github.com/fltk/fltk/releases/download/release-1.4.2/fltk-1.4.2-source.tar.gz
+source_filename = fltk-1.4.2-source.tar.gz
+source_hash = de076793fd8487a5a55e0763ac0e85b115d3761cd1aa4869dbf3fc9e779dfca8

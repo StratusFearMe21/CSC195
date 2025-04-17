@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>682</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Brainrot Database</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="listLayout">
+      <item>
+       <widget class="DatabaseView" name="databaseItems">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="origin">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>TikTok</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Reels</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>YouTube Shorts</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="listEditorLayout">
+        <item>
+         <widget class="QPushButton" name="createItem">
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeItem">
+          <property name="icon">
+           <iconset theme="QIcon::ThemeIcon::ListRemove"/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="memeEditorLayout">
+      <item>
+       <widget class="QComboBox" name="memeTier">
+        <property name="currentIndex">
+         <number>-1</number>
+        </property>
+        <property name="placeholderText">
+         <string>Meme Tier</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Skibidi Ohio Rizzler</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sigma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Based</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cringe</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QFormLayout" name="likesLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="likesLabel">
+          <property name="text">
+           <string>Likes</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QSpinBox" name="likesNumber">
+          <property name="maximum">
+           <number>2147483647</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="commentsNumber">
+          <property name="maximum">
+           <number>2147483647</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="commentsLabel">
+          <property name="text">
+           <string>Comments</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="ImageLabel" name="imageLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="acceptDrops">
+         <bool>true</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::Panel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <property name="text">
+         <string>Load Image</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="specializedLine">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="BaseWidget" name="editorWidget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>682</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSave"/>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentOpen"/>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::ApplicationExit"/>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::DocumentSaveAs"/>
+   </property>
+   <property name="text">
+    <string>Save As</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>DatabaseView</class>
+   <extends>QListView</extends>
+   <header>databaseview.h</header>
+   <slots>
+    <signal>setMemeTier(int)</signal>
+    <signal>setOrigin(int)</signal>
+    <signal>setLikes(int)</signal>
+    <signal>setComments(int)</signal>
+    <signal>setImage(QPixmap)</signal>
+    <slot>createNew()</slot>
+    <slot>memeTier(int)</slot>
+    <slot>origin(int)</slot>
+    <slot>likes(int)</slot>
+    <slot>comments(int)</slot>
+    <slot>save()</slot>
+    <slot>open()</slot>
+    <slot>saveAs()</slot>
+    <slot>remove()</slot>
+    <slot>image(QPixmap)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>BaseWidget</class>
+   <extends>QWidget</extends>
+   <header>basewidget.h</header>
+   <container>1</container>
+   <slots>
+    <signal>loadImage(QString)</signal>
+    <slot>setSpecializedNumber(int)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>ImageLabel</class>
+   <extends>QLabel</extends>
+   <header>imagelabel.h</header>
+   <slots>
+    <signal>image(QPixmap)</signal>
+    <slot>setImage(QPixmap)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseItems</sender>
+   <signal>setMemeTier(int)</signal>
+   <receiver>memeTier</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>44</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseItems</sender>
+   <signal>setOrigin(int)</signal>
+   <receiver>origin</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>596</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>memeTier</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>databaseItems</receiver>
+   <slot>memeTier(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>origin</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>databaseItems</receiver>
+   <slot>origin(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>likesNumber</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>databaseItems</receiver>
+   <slot>likes(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>614</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseItems</sender>
+   <signal>setLikes(int)</signal>
+   <receiver>likesNumber</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>202</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>614</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseItems</sender>
+   <signal>setComments(int)</signal>
+   <receiver>commentsNumber</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>299</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>564</x>
+     <y>114</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>commentsNumber</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>databaseItems</receiver>
+   <slot>comments(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>564</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSave</sender>
+   <signal>triggered()</signal>
+   <receiver>databaseItems</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen</sender>
+   <signal>triggered()</signal>
+   <receiver>databaseItems</receiver>
+   <slot>open()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSaveAs</sender>
+   <signal>triggered()</signal>
+   <receiver>databaseItems</receiver>
+   <slot>saveAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>136</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>createItem</sender>
+   <signal>clicked()</signal>
+   <receiver>databaseItems</receiver>
+   <slot>createNew()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>80</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removeItem</sender>
+   <signal>clicked()</signal>
+   <receiver>databaseItems</receiver>
+   <slot>remove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>554</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>imageLabel</sender>
+   <signal>image(QPixmap)</signal>
+   <receiver>databaseItems</receiver>
+   <slot>image(QPixmap)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>472</x>
+     <y>130</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>137</x>
+     <y>263</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>databaseItems</sender>
+   <signal>setImage(QPixmap)</signal>
+   <receiver>imageLabel</receiver>
+   <slot>setImage(QPixmap)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>263</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>472</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
