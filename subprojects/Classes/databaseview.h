@@ -19,7 +19,7 @@ private:
 public slots:
   void createNew();
   void remove();
-  void currentChanged(const QModelIndex &icurrent,
+  void currentChanged(const QModelIndex &current,
                       const QModelIndex &previous) override;
   void displayValueChanged(const QModelIndex &topLeft,
                            const QModelIndex &bottomRight,
