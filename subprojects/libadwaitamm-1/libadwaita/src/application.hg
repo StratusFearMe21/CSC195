@@ -1,0 +1,46 @@
+/* Copyright (c) 2019  Roger Ferrer <rofirrim@gmail.com>
+ *
+ * This file is part of libadwaitamm.
+ *
+ * libadwaitamm is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 2.1 of the License,
+ * or (at your option) any later version.
+ *
+ * libadwaitamm is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+_DEFS(libadwaitamm,libadwaita)
+_CONFIGINCLUDE(libadwaitammconfig.h)
+_PINCLUDE(gtkmm/private/application_p.h)
+
+#include <libadwaita-1/adwaita.h>
+#include <libadwaitamm/init.h>
+#include <gtkmm.h>
+
+namespace Adw
+{
+class Application : public Gtk::Application {
+  _CLASS_GOBJECT(Application, AdwApplication, ADW_APPLICATION, Gtk::Application, GtkApplication)
+
+private:
+   const Glib::Class& custom_class_init();
+
+protected:
+  _UNMANAGEABLE
+  _CUSTOM_DTOR
+
+  _IGNORE(adw_application_new)
+  Application(const Glib::ustring& application_id, Gio::Application::Flags flags);
+
+public:
+  _WRAP_CREATE(const Glib::ustring& application_id, Gio::Application::Flags flags)
+};
+
+} // namespace Adw

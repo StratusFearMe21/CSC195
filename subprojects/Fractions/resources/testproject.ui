@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.94.1 -->
+<interface>
+  <!-- interface-name testproject.ui -->
+  <requires lib="gtk" version="4.12"/>
+  <requires lib="libadwaita" version="1.6"/>
+  <template class="ApplicationWindow" parent="AdwApplicationWindow">
+    <property name="content">
+      <object class="AdwToolbarView">
+        <property name="content">
+          <object class="AdwToastOverlay" id="toast_overlay">
+            <child>
+              <object class="AdwClamp" id="main_clamp">
+                <property name="child">
+                  <object class="GtkBox" id="main_box">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">40</property>
+                    <property name="valign">center</property>
+                    <child>
+                      <object class="GtkBox" id="math_box">
+                        <property name="spacing">40</property>
+                        <property name="valign">center</property>
+                        <child>
+                          <object class="AdwClamp">
+                            <property name="child">
+                              <object class="AdwPreferencesGroup">
+                                <property name="title">1st term</property>
+                                <child>
+                                  <object class="AdwEntryRow" id="first_numerator_input">
+                                    <property name="text">1</property>
+                                    <property name="title">Numerator</property>
+                                    <signal name="changed" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="AdwEntryRow" id="first_denominator_input">
+                                    <property name="text">2</property>
+                                    <property name="title">Denominator</property>
+                                    <signal name="changed" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                              </object>
+                            </property>
+                            <property name="maximum-size">300</property>
+                            <property name="tightening-threshold">200</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwClamp">
+                            <property name="child">
+                              <object class="AdwPreferencesGroup">
+                                <property name="title">Operation</property>
+                                <child>
+                                  <object class="AdwComboRow" id="operation_input">
+                                    <property name="model">
+                                      <object class="GtkStringList">
+                                        <items>
+                                          <item>Add</item>
+                                          <item>Subtract</item>
+                                          <item>Multiply</item>
+                                          <item>Divide</item>
+                                          <item>Simplify</item>
+                                          <item>Greater than</item>
+                                          <item>Less than</item>
+                                          <item>Equal to</item>
+                                          <item>Greater than equal to</item>
+                                          <item>Less than equal to</item>
+                                          <item>Not equal to</item>
+                                        </items>
+                                      </object>
+                                    </property>
+                                    <property name="title">Operation</property>
+                                    <property name="width-request">290</property>
+                                    <!-- Custom object fragments -->
+                                    <signal name="notify::selected" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="AdwSwitchRow" id="algebra_switch">
+                                    <property name="title">Algebra</property>
+                                    <!-- Custom object fragments -->
+                                    <signal name="notify::active" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                              </object>
+                            </property>
+                            <property name="maximum-size">300</property>
+                            <property name="tightening-threshold">200</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwClamp">
+                            <property name="child">
+                              <object class="AdwPreferencesGroup">
+                                <property name="title">2nd term</property>
+                                <child>
+                                  <object class="AdwEntryRow" id="second_numerator_input">
+                                    <property name="text">3</property>
+                                    <property name="title">Numerator</property>
+                                    <signal name="changed" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="AdwEntryRow" id="second_denominator_input">
+                                    <property name="text">4</property>
+                                    <property name="title">Denominator</property>
+                                    <signal name="changed" handler="frac_changed" swapped="yes"/>
+                                  </object>
+                                </child>
+                              </object>
+                            </property>
+                            <property name="maximum-size">300</property>
+                            <property name="tightening-threshold">200</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="output">
+                        <property name="label">5/4</property>
+                        <property name="tooltip-text">Copy Result</property>
+                        <signal name="clicked" handler="copy_result" swapped="yes"/>
+                        <style>
+                          <class name="title-1"/>
+                          <class name="pill"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="maximum-size">1000</property>
+                <property name="tightening-threshold">800</property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <child type="end">
+              <object class="GtkButton">
+                <property name="action-name">app.about</property>
+                <property name="icon-name">help-about-symbolic</property>
+                <style>
+                  <class name="image-button"/>
+                </style>
+              </object>
+            </child>
+            <child type="title">
+              <object class="AdwWindowTitle">
+                <property name="subtitle">Calculator</property>
+                <property name="title">Fraction</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+    <property name="title">Fractions</property>
+    <child>
+      <object class="AdwBreakpoint">
+        <!-- Custom object fragments -->
+        <condition>max-height: 380</condition>
+        <setter object="main_box" property="valign">0</setter>
+      </object>
+    </child>
+    <child>
+      <object class="AdwBreakpoint">
+        <!-- Custom object fragments -->
+        <condition>max-width: 900</condition>
+        <setter object="math_box" property="orientation">1</setter>
+        <setter object="main_clamp" property="maximum-size">300</setter>
+        <setter object="main_clamp" property="tightening-threshold">200</setter>
+      </object>
+    </child>
+  </template>
+</interface>

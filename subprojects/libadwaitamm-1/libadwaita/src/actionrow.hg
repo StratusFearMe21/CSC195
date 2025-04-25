@@ -1,0 +1,38 @@
+/* Copyright (c) 2019  Roger Ferrer <rofirrim@gmail.com>
+ *
+ * This file is part of libadwaitamm.
+ *
+ * libadwaitamm is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published
+ * by the Free Software Foundation, either version 2.1 of the License,
+ * or (at your option) any later version.
+ *
+ * libadwaitamm is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+#include <libadwaitamm/preferencesrow.h>
+
+_DEFS(libadwaitamm,libadwaita)
+_CONFIGINCLUDE(libadwaitammconfig.h)
+_PINCLUDE(libadwaitamm/private/preferencesrow_p.h)
+
+#include <libadwaita-1/adwaita.h>
+
+namespace Adw
+{
+
+class ActionRow : public Adw::PreferencesRow {
+  _CLASS_GTKOBJECT(ActionRow, AdwActionRow, ADW_ACTION_ROW, Adw::PreferencesRow, AdwPreferencesRow)
+  _STRUCT_NOT_HIDDEN
+
+public:
+  _CTOR_DEFAULT
+};
+
+} // namespace Adw

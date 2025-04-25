@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<cambalache-project version="0.94.0" target_tk="gtk-4.0">
+  <ui>
+	(1,1,"testproject.ui","testproject.ui",None,None,None,None,None,None,None)
+  </ui>
+  <object>
+	(1,1,"AdwApplicationWindow","ApplicationWindow",None,None,None,None,0,None,None),
+	(1,2,"AdwToolbarView",None,1,None,None,None,2,None,None),
+	(1,3,"AdwHeaderBar",None,2,None,"top",None,0,None,None),
+	(1,4,"GtkButton",None,3,None,"end",None,0,None,None),
+	(1,5,"AdwWindowTitle",None,3,None,"title",None,1,None,None),
+	(1,6,"AdwToastOverlay","toast_overlay",2,None,None,None,1,None,None),
+	(1,14,"AdwBreakpoint",None,1,None,None,None,0,"&lt;condition&gt;max-height: 380&lt;/condition&gt;\n&lt;setter object=\"main_box\" property=\"valign\"&gt;0&lt;/setter&gt;",None),
+	(1,16,"GtkBox","math_box",34,None,None,None,0,None,None),
+	(1,17,"AdwClamp",None,16,None,None,None,0,None,None),
+	(1,19,"GtkButton","output",34,None,None,None,1,None,None),
+	(1,20,"AdwClamp",None,16,None,None,None,2,None,None),
+	(1,27,"AdwClamp",None,16,None,None,None,1,None,None),
+	(1,28,"AdwComboRow","operation_input",36,None,None,None,0,"&lt;signal name=\"notify::selected\" handler=\"frac_changed\" swapped=\"yes\"/&gt;",None),
+	(1,29,"GtkStringList",None,28,None,None,None,0,None,None),
+	(1,32,"AdwClamp","main_clamp",6,None,None,None,0,None,None),
+	(1,33,"AdwBreakpoint",None,1,None,None,None,1,"&lt;condition&gt;max-width: 900&lt;/condition&gt;\n&lt;setter object=\"math_box\" property=\"orientation\"&gt;1&lt;/setter&gt;\n&lt;setter object=\"main_clamp\" property=\"maximum-size\"&gt;300&lt;/setter&gt;\n&lt;setter object=\"main_clamp\" property=\"tightening-threshold\"&gt;200&lt;/setter&gt;",None),
+	(1,34,"GtkBox","main_box",32,None,None,None,0,None,None),
+	(1,35,"AdwPreferencesGroup",None,17,None,None,None,0,None,None),
+	(1,36,"AdwPreferencesGroup",None,27,None,None,None,0,None,None),
+	(1,37,"AdwPreferencesGroup",None,20,None,None,None,0,None,None),
+	(1,38,"AdwEntryRow","first_numerator_input",35,None,None,None,0,None,None),
+	(1,39,"AdwEntryRow","first_denominator_input",35,None,None,None,1,None,None),
+	(1,40,"AdwEntryRow","second_numerator_input",37,None,None,None,0,None,None),
+	(1,41,"AdwEntryRow","second_denominator_input",37,None,None,None,1,None,None),
+	(1,44,"AdwSwitchRow","algebra_switch",36,None,None,None,1,"&lt;signal name=\"notify::active\" handler=\"frac_changed\" swapped=\"yes\"/&gt;",None)
+  </object>
+  <object_property>
+	(1,1,"AdwApplicationWindow","content",None,None,None,None,None,2,None,None,None,None),
+	(1,1,"GtkWindow","title","Fractions",None,None,None,None,None,None,None,None,None),
+	(1,2,"AdwToolbarView","content",None,None,None,None,None,6,None,None,None,None),
+	(1,4,"GtkActionable","action-name","app.about",None,None,None,None,None,None,None,None,None),
+	(1,4,"GtkButton","icon-name","help-about-symbolic",None,None,None,None,None,None,None,None,None),
+	(1,5,"AdwWindowTitle","subtitle","Calculator",None,None,None,None,None,None,None,None,None),
+	(1,5,"AdwWindowTitle","title","Fraction",None,None,None,None,None,None,None,None,None),
+	(1,16,"GtkBox","spacing","40",None,None,None,None,None,None,None,None,None),
+	(1,16,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
+	(1,17,"AdwClamp","child",None,None,None,None,None,35,None,None,None,None),
+	(1,17,"AdwClamp","maximum-size","300",None,None,None,None,None,None,None,None,None),
+	(1,17,"AdwClamp","tightening-threshold","200",None,None,None,None,None,None,None,None,None),
+	(1,19,"GtkButton","label","5/4",0,None,None,None,None,None,None,None,None),
+	(1,19,"GtkWidget","tooltip-text","Copy Result",0,None,None,None,None,None,None,None,None),
+	(1,20,"AdwClamp","child",None,None,None,None,None,37,None,None,None,None),
+	(1,20,"AdwClamp","maximum-size","300",0,None,None,None,None,None,None,None,None),
+	(1,20,"AdwClamp","tightening-threshold","200",0,None,None,None,None,None,None,None,None),
+	(1,27,"AdwClamp","child",None,None,None,None,None,36,None,None,None,None),
+	(1,27,"AdwClamp","maximum-size","300",None,None,None,None,None,None,None,None,None),
+	(1,27,"AdwClamp","tightening-threshold","200",None,None,None,None,None,None,None,None,None),
+	(1,28,"AdwComboRow","model",None,None,None,None,None,29,None,None,None,None),
+	(1,28,"AdwPreferencesRow","title","Operation",None,None,None,None,None,None,None,None,None),
+	(1,28,"GtkWidget","width-request","290",None,None,None,None,None,None,None,None,None),
+	(1,32,"AdwClamp","child",None,None,None,None,None,34,None,None,None,None),
+	(1,32,"AdwClamp","maximum-size","1000",None,None,None,None,None,None,None,None,None),
+	(1,32,"AdwClamp","tightening-threshold","800",None,None,None,None,None,None,None,None,None),
+	(1,34,"GtkBox","spacing","40",None,None,None,None,None,None,None,None,None),
+	(1,34,"GtkOrientable","orientation","vertical",None,None,None,None,None,None,None,None,None),
+	(1,34,"GtkWidget","valign","center",None,None,None,None,None,None,None,None,None),
+	(1,35,"AdwPreferencesGroup","title","1st term",None,None,None,None,None,None,None,None,None),
+	(1,36,"AdwPreferencesGroup","title","Operation",None,None,None,None,None,None,None,None,None),
+	(1,37,"AdwPreferencesGroup","title","2nd term",None,None,None,None,None,None,None,None,None),
+	(1,38,"AdwPreferencesRow","title","Numerator",None,None,None,None,None,None,None,None,None),
+	(1,38,"GtkEditable","text","1",None,None,None,None,None,None,None,None,None),
+	(1,39,"AdwPreferencesRow","title","Denominator",None,None,None,None,None,None,None,None,None),
+	(1,39,"GtkEditable","text","2",None,None,None,None,None,None,None,None,None),
+	(1,40,"AdwPreferencesRow","title","Numerator",None,None,None,None,None,None,None,None,None),
+	(1,40,"GtkEditable","text","3",None,None,None,None,None,None,None,None,None),
+	(1,41,"AdwPreferencesRow","title","Denominator",None,None,None,None,None,None,None,None,None),
+	(1,41,"GtkEditable","text","4",None,None,None,None,None,None,None,None,None),
+	(1,44,"AdwPreferencesRow","title","Algebra",None,None,None,None,None,None,None,None,None)
+  </object_property>
+  <object_signal>
+	(5,1,19,"GtkButton","clicked","copy_result",None,0,1,0,None),
+	(6,1,38,"GtkEditable","changed","frac_changed",None,0,1,0,None),
+	(7,1,39,"GtkEditable","changed","frac_changed",None,0,1,0,None),
+	(8,1,40,"GtkEditable","changed","frac_changed",None,0,1,0,None),
+	(9,1,41,"GtkEditable","changed","frac_changed",None,0,1,0,None)
+  </object_signal>
+  <object_data>
+	(1,4,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,4,"GtkWidget",2,2,None,1,None,None,None,None),
+	(1,19,"GtkWidget",1,1,None,None,None,None,None,None),
+	(1,19,"GtkWidget",2,2,None,1,None,None,None,None),
+	(1,19,"GtkWidget",2,3,None,1,None,None,None,None),
+	(1,29,"GtkStringList",1,1,None,None,None,None,None,None),
+	(1,29,"GtkStringList",2,2,"Add",1,None,None,None,None),
+	(1,29,"GtkStringList",2,3,"Subtract",1,None,None,None,None),
+	(1,29,"GtkStringList",2,4,"Multiply",1,None,None,None,None),
+	(1,29,"GtkStringList",2,5,"Divide",1,None,None,None,None),
+	(1,29,"GtkStringList",2,6,"Simplify",1,None,None,None,None),
+	(1,29,"GtkStringList",2,7,"Greater than",1,None,None,None,None),
+	(1,29,"GtkStringList",2,8,"Less than",1,None,None,None,None),
+	(1,29,"GtkStringList",2,9,"Equal to",1,None,None,None,None),
+	(1,29,"GtkStringList",2,10,"Greater than equal to",1,None,None,None,None),
+	(1,29,"GtkStringList",2,11,"Less than equal to",1,None,None,None,None),
+	(1,29,"GtkStringList",2,12,"Not equal to",1,None,None,None,None)
+  </object_data>
+  <object_data_arg>
+	(1,4,"GtkWidget",2,2,"name","image-button"),
+	(1,19,"GtkWidget",2,2,"name","title-1"),
+	(1,19,"GtkWidget",2,3,"name","pill")
+  </object_data_arg>
+</cambalache-project>

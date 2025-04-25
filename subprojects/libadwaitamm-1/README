@@ -1,0 +1,2 @@
+libadwaitamm is the C++ binding for the libadwaita library.
+This module is *not* part of the GNOME C++ bindings effort <https://gtkmm.gnome.org/>, and only includes functions needed for my applications

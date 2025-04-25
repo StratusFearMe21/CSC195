@@ -1,0 +1,58 @@
+;; From AdwApplicationWindow
+
+(define-property content
+  (of-object "AdwApplicationWindow")
+  (prop-type "GParamObject")
+  (docs "")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+)
+
+(define-property current-breakpoint
+  (of-object "AdwApplicationWindow")
+  (prop-type "GParamObject")
+  (docs "")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property dialogs
+  (of-object "AdwApplicationWindow")
+  (prop-type "GParamObject")
+  (docs "")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property visible-dialog
+  (of-object "AdwApplicationWindow")
+  (prop-type "GParamObject")
+  (docs "")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)
+
+(define-property adaptive-preview
+  (of-object "AdwApplicationWindow")
+  (prop-type "GParamBoolean")
+  (docs "")
+  (readable #t)
+  (writable #t)
+  (construct-only #f)
+  (default-value "FALSE")
+)
+
+;; From AdwApplication
+
+(define-property style-manager
+  (of-object "AdwApplication")
+  (prop-type "GParamObject")
+  (docs "")
+  (readable #t)
+  (writable #f)
+  (construct-only #f)
+)

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/example/ui">
+  <gresource prefix="/edu/neumont/csc195/fractions/ui">
     <file compressed="true" preprocess="xml-stripblanks">testproject.ui</file>
   </gresource>
 </gresources>

@@ -1,0 +1,13 @@
+; Virtual functions
+; Hand-written file
+
+; AdwSomeType
+
+;(define-vfunc some_vfunc
+;  (of-object "AdwSomeType")
+;  (return-type "void")
+;  (parameters
+;    '("GObject*" "some_object")
+;    '("const-gchar*" "some_string")
+;  )
+;)
